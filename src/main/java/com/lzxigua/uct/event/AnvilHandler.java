@@ -31,12 +31,13 @@ public class AnvilHandler {
     public static final String NBT_KEY = "IsCommandItem";
 
     /**
-     * Translation keys for the prefix. {@code spaced} keeps the trailing space,
-     * {@code tight} drops it (Chinese). English fills both with "Command Block "
-     * so the English name is never squished together.
+     * The prefix reuses vanilla's command block name, so it is localised for every
+     * language automatically. The separator keys only decide whether a space follows
+     * it: English always keeps one, Chinese follows the config.
      */
-    private static final String PREFIX_SPACED = "item.universal_command_tools.prefix.spaced";
-    private static final String PREFIX_TIGHT = "item.universal_command_tools.prefix.tight";
+    private static final String COMMAND_BLOCK_NAME = "block.minecraft.command_block";
+    private static final String SEPARATOR_SPACED = "item.universal_command_tools.separator.spaced";
+    private static final String SEPARATOR_TIGHT = "item.universal_command_tools.separator.tight";
 
     private static final ResourceLocation COMMAND_BOOK_ID = new ResourceLocation("witherstormmod", "command_block_book");
 
@@ -80,12 +81,13 @@ public class AnvilHandler {
         // (HideFlags bit 2). OR the bit in case the item already hides something else.
         output.getOrCreateTag().putInt("HideFlags", output.getOrCreateTag().getInt("HideFlags") | 4);
 
-        String prefixKey = UCTConfig.INSTANCE.spaceAfterPrefix() ? PREFIX_SPACED : PREFIX_TIGHT;
+        String separatorKey = UCTConfig.INSTANCE.spaceAfterPrefix() ? SEPARATOR_SPACED : SEPARATOR_TIGHT;
         // Explicit italic=false: vanilla adds ITALIC to named items in getTooltipLines,
         // but a component's own style takes precedence over the inherited style.
         Style nameStyle = Style.EMPTY.withColor(ChatFormatting.LIGHT_PURPLE).withItalic(false);
-        MutableComponent name = Component.translatable(prefixKey)
+        MutableComponent name = Component.translatable(COMMAND_BLOCK_NAME)
                 .withStyle(nameStyle)
+                .append(Component.translatable(separatorKey))
                 .append(left.getHoverName().copy().withStyle(Style.EMPTY.withItalic(false)));
         output.setHoverName(name);
 

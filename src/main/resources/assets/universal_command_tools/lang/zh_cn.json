@@ -1,4 +1,6 @@
 {
+  "item.universal_command_tools.separator.spaced": " ",
+  "item.universal_command_tools.separator.tight": "",
   "item.universal_command_tools.prefix.spaced": "命令方块 ",
   "item.universal_command_tools.prefix.tight": "命令方块"
 }

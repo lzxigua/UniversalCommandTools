@@ -1,4 +1,6 @@
 {
+  "item.universal_command_tools.separator.spaced": " ",
+  "item.universal_command_tools.separator.tight": " ",
   "item.universal_command_tools.prefix.spaced": "Command Block ",
   "item.universal_command_tools.prefix.tight": "Command Block "
 }

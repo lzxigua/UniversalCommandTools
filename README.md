@@ -10,7 +10,7 @@ Combine an item with the **Enchanted Command Block Book** in an anvil, and the r
 
 - **Any item works** — sticks, apples, modded items, anything.
 - **Same look and feel as the real command tools** — light-purple prefix, no italics, `Unbreakable` hidden with `HideFlags`.
-- **Localised prefix** — the prefix is a translation key: English always renders `Command Block ` with a space, while Chinese renders `命令方块` and follows the `spaceAfterPrefix` setting.
+- **Localised prefix** — it reuses vanilla's command block name, so every client sees its own language. English always keeps a space; Chinese follows the `spaceAfterPrefix` setting.
 - **Costs 1 XP level and 1 book** per conversion.
 - **CWSM recipes stay untouched** — the mod's own anvil recipes (e.g. diamond sword → command block sword) are processed first and win.
 - **Configurable blacklist** — CWSM's command weapons are listed by default so nothing is converted twice.
