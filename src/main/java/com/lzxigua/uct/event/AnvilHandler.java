@@ -31,6 +31,12 @@ public class AnvilHandler {
     public static final String NBT_KEY = "IsCommandItem";
 
     /**
+     * Resource packs can give converted items a command-weapon look by adding a
+     * {@code custom_model_data} model override with this value for the item.
+     */
+    public static final int CUSTOM_MODEL_DATA = 21320;
+
+    /**
      * The prefix reuses vanilla's command block name, so it is localised for every
      * language automatically. The separator keys only decide whether a space follows
      * it: English always keeps one, Chinese follows the config.
@@ -80,6 +86,9 @@ public class AnvilHandler {
         // Hide the "Unbreakable" tooltip line the same way the real command tools do
         // (HideFlags bit 2). OR the bit in case the item already hides something else.
         output.getOrCreateTag().putInt("HideFlags", output.getOrCreateTag().getInt("HideFlags") | 4);
+        // Opt-in hook for resource packs: an item model override keyed on this value
+        // can replace the converted item's texture without shipping any assets here.
+        output.getOrCreateTag().putInt("CustomModelData", CUSTOM_MODEL_DATA);
 
         String separatorKey = UCTConfig.INSTANCE.spaceAfterPrefix() ? SEPARATOR_SPACED : SEPARATOR_TIGHT;
         // Explicit italic=false: vanilla adds ITALIC to named items in getTooltipLines,

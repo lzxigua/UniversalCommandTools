@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "pack_format": 15,
+    "description": {
+      "text": "自定义命令方块炽铁剑材质示例",
+      "extra": [
+        {
+          "text": "\nCustom command block fiery sword texture example"
+        }
+      ]
+    }
+  }
+}

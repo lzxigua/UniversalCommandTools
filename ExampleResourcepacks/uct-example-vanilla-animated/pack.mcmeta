@@ -1,0 +1,13 @@
+{
+  "pack": {
+    "pack_format": 15,
+    "description": {
+      "text": "自定义命令方块物品动态材质示例",
+      "extra": [
+        {
+          "text": "\nCustom command block item animated texture example"
+        }
+      ]
+    }
+  }
+}
