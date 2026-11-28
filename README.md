@@ -9,7 +9,7 @@ Combine an item with the **Enchanted Command Block Book** in an anvil, and the r
 ## Features
 
 - **Any item works** — sticks, apples, modded items, anything.
-- **Same look and feel as the real command tools** — light-purple prefix, no italics, `Unbreakable` hidden with `HideFlags`. For a unique appearance you need a resource pack — see the [resource pack tutorial](docs/resourcepack-tutorial.md).
+- **Same look and feel as the real command tools** — light-purple EPIC name that stays purple after renaming, no italics, `Unbreakable` hidden with `HideFlags`. For a unique appearance you need a resource pack — see the [resource pack tutorial](docs/resourcepack-tutorial.md).
 - **Localised prefix** — it reuses vanilla's command block name, so every client sees its own language. English always keeps a space; Chinese follows the `spaceAfterPrefix` setting.
 - **Costs 1 XP level and 1 book** per conversion.
 - **CWSM recipes stay untouched** — the mod's own anvil recipes (e.g. diamond sword → command block sword) are processed first and win.
@@ -28,7 +28,7 @@ Combine an item with the **Enchanted Command Block Book** in an anvil, and the r
 ## Usage
 
 1. Put an item in the left anvil slot and the Enchanted Command Block Book (`witherstormmod:command_block_book`) in the right slot.
-2. Take the result: the item becomes a command weapon, gains a hidden `Unbreakable` tag and a light-purple prefix (`Command Block ` in English, `命令方块`/`命令方块 ` in Chinese).
+2. Take the result: the item becomes a command weapon, gains a hidden `Unbreakable` tag and a light-purple prefix. The item's default name is used, so a name given before conversion is discarded (same as the mod's built-in command tools).
 3. The operation costs 1 XP level and consumes 1 book.
 
 Items that already have the tag, CWSM command weapons, and the command book itself are never converted again. Converted items work whenever the command block is vulnerable.

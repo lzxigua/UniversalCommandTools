@@ -97,7 +97,9 @@ public class AnvilHandler {
         MutableComponent name = Component.translatable(COMMAND_BLOCK_NAME)
                 .withStyle(nameStyle)
                 .append(Component.translatable(separatorKey))
-                .append(left.getHoverName().copy().withStyle(Style.EMPTY.withItalic(false)));
+                // Use the item's default name, not getHoverName(): a name the player
+                // gave the item before converting it must not carry over.
+                .append(left.getItem().getName(left).copy().withStyle(Style.EMPTY.withItalic(false)));
         output.setHoverName(name);
 
         event.setOutput(output);
